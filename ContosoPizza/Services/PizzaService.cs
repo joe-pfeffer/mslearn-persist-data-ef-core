@@ -44,12 +44,7 @@ public class PizzaService
             throw new InvalidOperationException("Pizza or topping does not exist");
         }
 
-        if(pizzaToUpdate.Toppings is null)
-        {
-            pizzaToUpdate.Toppings = new List<Topping>();
-        }
-
-        pizzaToUpdate.Toppings.Add(toppingToAdd);
+        pizzaToUpdate?.Toppings?.Add(toppingToAdd);
 
         this.context.SaveChanges();
     }
